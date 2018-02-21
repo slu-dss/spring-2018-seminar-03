@@ -10,16 +10,16 @@ esp_female <- function(.data, currentVar, newVar, logical = TRUE){
   
   # recode variable
   if (logical == TRUE){
-  
-    .data <- mutate(.data, !!newVarQ := ifelse(!!currVar == "female", TRUE, FALSE))    
-
+    
+    .data <- dplyr::mutate(.data, !!newVarQ := ifelse(!!currVar == "female", TRUE, FALSE))    
+    
   }
   else if (logical == FALSE){
-
+    
     .data %>%
-      mutate(!!newVarQ := ifelse(!!currVar == "female", "Yes", "No")) %>%
-      mutate(!!newVarQ := as.factor(!!newVar)) -> .data
-
+      dplyr::mutate(!!newVarQ := ifelse(!!currVar == "female", "Yes", "No")) %>%
+      dplyr::mutate(!!newVarQ := as.factor(!!newVar)) -> .data
+    
   }
   
   return(.data)
