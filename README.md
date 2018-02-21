@@ -16,6 +16,8 @@ This repository contains files for:
 * [R Package](http://r-pkgs.had.co.nz) by Hadley Wickham
 * [Package Development Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/package-development.pdf)
 
+* [`rlang` website](http://rlang.tidyverse.org)
+
 ## About the SLU DSS
 ### Spring 2018 - Functions & Packages in `R`
 The four sessions for the Spring 2018 seminar will cover ways to use R for managing research projects. We’ll discuss how to write functions that automate repetitive tasks, how to include those functions in your own package, and how to track your package development work using Git and GitHub.
