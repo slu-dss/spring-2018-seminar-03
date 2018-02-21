@@ -17,7 +17,27 @@
 #' @importFrom dplyr select
 #' 
 #' @export 
-esp_binary <- function(){
+esp_binary <- function(.data, currentVar, newVar, logical = TRUE){
   
+  # reformat currentVar input
+  currVar <- rlang::enquo(currentVar)
+  
+  # reformat newVar input
+  newVar <- rlang::enquo(newVar)
+  newVarQ <- rlang::quo_name(rlang::enquo(newVar))
+  
+  # recode variable
+  if (logical == TRUE){
+    
+    .data <- dplyr::mutate(.data, !!newVarQ := ifelse(!!currVar == "Yes", TRUE, FALSE))    
+    
+  }
+  else if (logical == FALSE){
+    
+    .data <- dplyr::mutate(.data, !!newVarQ := as.factor(!!newVar))
+    
+  }
+  
+  return(.data)
   
 }
